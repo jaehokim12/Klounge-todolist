@@ -9,10 +9,7 @@ class Todo extends Component {
         { id: 1, title: 'study' },
         { id: 2, title: 'todos' },
       ],
-      menu: [
-        { id: 0, title: '생성' },
-        { id: 1, title: '버튼' },
-      ],
+
       text: '',
     };
   }
@@ -24,6 +21,15 @@ class Todo extends Component {
       e.preventDefault();
       console.log('submit action');
       this.setState();
+    };
+
+    const addList = () => {
+      this.setState({
+        todolists: [
+          ...this.state.todolists,
+          { id: this.state.todolists.length + 1, title: this.state.text },
+        ],
+      });
     };
 
     return (
@@ -42,12 +48,9 @@ class Todo extends Component {
                 this.setState({ text: e.target.value });
               }}
             />
-            <button type="submit">{`delete`}</button>
+            <button onClick={addList}>{`생성`}</button>
           </form>
         </ul>
-        {/* 입력받은값을 생성버튼을눌러 새로운스테이트값으로저장
-
-                     삭제버튼을 누르면  */}
       </div>
     );
   }
