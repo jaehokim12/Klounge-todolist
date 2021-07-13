@@ -1,29 +1,20 @@
-import React ,{Component} from 'react';
-import Home from './routes/home'
-import Counter from './routes/counter'
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link
-} from "react-router-dom";
+import React, { Component } from 'react';
+import Home from './routes/home';
+import Counter from './routes/counter';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import Nav from '../src/components/Nav';
 
-
-class App extends Component{
- 
-  render(){
-    return(
+class App extends Component {
+  render() {
+    return (
       <Router>
+        <Nav />
         <Switch>
-          <Route exact path="/">
-            <Home />
-          </Route>
-          <Route path="/Counter">
-            <Counter />
-          </Route>
+          <Route exact path="/" component={Home} />
+          <Route path="/Counter" component={Counter} />
         </Switch>
       </Router>
-    )
+    );
   }
 }
 

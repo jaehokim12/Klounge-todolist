@@ -1,20 +1,13 @@
-import React,{Component} from 'react';
-
+import React, { Component } from 'react';
+import Todo from '../components/Todo';
 
 class Home extends Component {
-    
-    // constructor(props){
-    //         super(props)
-    //         this.state={
-                    
-    //         }
-    // }
-    render(){
-        return(
-            <div>
-                Home
-            </div>
-        )
-    }   
-}                                                                 
+  render() {
+    return (
+      <div>
+        <Todo />
+      </div>
+    );
+  }
+}
 export default Home;

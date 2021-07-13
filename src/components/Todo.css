@@ -1,0 +1,9 @@
+.navContainer {
+  margin-top: 300px;
+  width: 500px;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  align-items: center;
+  border: 1px solid green;
+}
