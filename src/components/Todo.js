@@ -34,10 +34,11 @@ class Todo extends Component {
       console.log();
     };
     const deleteList = e => {
-      console.log(e.target.value);
       this.setState({
         todolists: [
-          ...this.state.todolists.filter(list => list.id != e.target.value),
+          ...this.state.todolists.filter(
+            list => list.id !== parseInt(e.target.value)
+          ),
         ],
       });
     };
