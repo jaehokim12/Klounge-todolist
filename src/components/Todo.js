@@ -5,9 +5,9 @@ class Todo extends Component {
     super(props);
     this.state = {
       todolists: [
-        { id: 0, title: 'react' },
-        { id: 1, title: 'study' },
-        { id: 2, title: 'todos' },
+        { id: 1, title: 'react' },
+        { id: 2, title: 'study' },
+        { id: 3, title: 'todos' },
       ],
 
       text: '',
@@ -29,6 +29,16 @@ class Todo extends Component {
           ...this.state.todolists,
           { id: this.state.todolists.length + 1, title: this.state.text },
         ],
+        text: '',
+      });
+      console.log();
+    };
+    const deleteList = e => {
+      console.log(e.target.value);
+      this.setState({
+        todolists: [
+          ...this.state.todolists.filter(list => list.id != e.target.value),
+        ],
       });
     };
 
@@ -37,9 +47,11 @@ class Todo extends Component {
         <ul className="">
           <h1>Todolist</h1>
           {this.state.todolists.map((list, id) => (
-            <li key={id}>{list.title}</li>
+            <li key={id}>
+              {list.title}
+              <button value={list.id} onClick={deleteList}>{`삭제`}</button>
+            </li>
           ))}
-          -------------
           <form onSubmit={addTodoList}>
             <input
               type="text"
