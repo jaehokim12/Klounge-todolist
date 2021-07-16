@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Todo from '../components/Todo';
+import Todo from '../components/todo';
 
 class Home extends Component {
   render() {

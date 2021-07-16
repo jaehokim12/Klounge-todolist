@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './Todo.css';
+import './todo.css';
 class Todo extends Component {
   constructor(props) {
     super(props);
@@ -33,12 +33,10 @@ class Todo extends Component {
       });
       console.log();
     };
-    const deleteList = e => {
+    const deleteList = listId => {
       this.setState({
         todolists: [
-          ...this.state.todolists.filter(
-            list => list.id !== parseInt(e.target.value)
-          ),
+          ...this.state.todolists.filter(list => list.id !== parseInt(listId)),
         ],
       });
     };
@@ -50,7 +48,7 @@ class Todo extends Component {
           {this.state.todolists.map((list, id) => (
             <li key={id}>
               {list.title}
-              <button value={list.id} onClick={deleteList}>{`삭제`}</button>
+              <button onClick={() => deleteList(list.id)}>{`삭제`}</button>
             </li>
           ))}
           <form onSubmit={addTodoList}>
@@ -64,6 +62,16 @@ class Todo extends Component {
             <button onClick={addList}>{`생성`}</button>
           </form>
         </ul>
+
+        {/* setState(prev => {
+
+        const temp = [...prev,addSomeValue] 
+        const arr1 = [1,2,3];
+        let arr2 = [];
+
+          
+          return(prev)
+        }) */}
       </div>
     );
   }
