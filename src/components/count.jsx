@@ -1,13 +1,18 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { decreaseCount, increaseCount } from '../actions/count';
+
 import * as actions from '../actions/count';
 class Count extends Component {
   constructor(props) {
     super(props);
+
+    this.state = {
+      test: 'test case',
+    };
   }
   render() {
     console.log(this.props);
+
     const { countstate, increase, decrease } = this.props;
 
     return (

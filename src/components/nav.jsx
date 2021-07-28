@@ -8,6 +8,8 @@ class Nav extends Component {
       navlist: [
         { to: '/', title: 'Home' },
         { to: '/Counter', title: 'Counter' },
+        { to: '/homehook', title: 'Homehook' },
+        { to: '/Counterhook', title: 'Counterhook' },
       ],
     };
   }
@@ -22,7 +24,10 @@ class Nav extends Component {
           //         {navlist.title}
           // </button>
           <div key={index}>
-            <Link to={navlist.to}>{navlist.title}</Link>
+            <Link to={navlist.to}>
+              {navlist.title}
+              //
+            </Link>
           </div>
         ))}
       </div>
