@@ -13,16 +13,11 @@ class Nav extends Component {
       ],
     };
   }
+
   render() {
     return (
       <div className="Container">
         {this.state.navlist.map((navlist, index) => (
-          // <button key={index} onClick={()=>{
-          //         <NavLink exact to={navlist.to}/>
-          //     }
-          // }>
-          //         {navlist.title}
-          // </button>
           <div key={index}>
             <Link to={navlist.to}>
               {navlist.title}

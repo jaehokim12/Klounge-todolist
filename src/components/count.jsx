@@ -5,7 +5,6 @@ import * as actions from '../actions/count';
 class Count extends Component {
   constructor(props) {
     super(props);
-
     this.state = {
       test: 'test case',
     };
