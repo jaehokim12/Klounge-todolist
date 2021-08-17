@@ -41,7 +41,7 @@ class Count extends Component {
 }
 const mapStateToProps = state => {
   return {
-    countstate: state.count.count,
+    countstate: state.count.count
   };
 };
 const mapDispatchToProps = dispatch => ({
